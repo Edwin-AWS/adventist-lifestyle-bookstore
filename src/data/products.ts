@@ -1,0 +1,40 @@
+export type Audience = 'Adults' | 'Young Adults' | 'Boys & Girls' | 'Toddlers'
+export type BibleTranslation = 'KJV' | 'NKJV' | 'NLT' | 'ESV' | 'NIV' | 'Amplified' | 'Other'
+export type BookProduct = {
+  id: string; name: string; price: number; previousPrice?: number; audience: Audience[]; details?: string;
+  translation?: BibleTranslation; coverColour?: string; format?: string; availableOnOrder?: boolean;
+  ageGuidance?: string; description?: string; author?: string; publisher?: string; sku?: string; language?: string;
+  pageCount?: number; dimensions?: string; preferredBag?: string; typeSize?: string; features?: string[];
+  media: { cover: string; previewImages: string[]; previewVideo?: string; alt: string };
+}
+const cover = (alt: string) => ({ cover: '', previewImages: [], alt })
+export const products: BookProduct[] = [
+ {id:'nlt-inspire-699',name:'NLT Inspire Bible',price:699,audience:['Young Adults','Adults'],details:'For teen girls and above.',translation:'NLT',ageGuidance:'Teen girls and above',description:'A creative Bible listing for readers who enjoy reflective, faith-centred reading.',media:cover('NLT Inspire Bible cover placeholder')},
+ {id:'nlt-elephant-hardcover-200',name:'NLT Elephant Hardcover Bible',price:200,previousPrice:259,audience:['Boys & Girls'],translation:'NLT',coverColour:'Elephant illustration',format:'Hardcover',ageGuidance:'Boys',media:cover('NLT Elephant Hardcover Bible cover placeholder')},
+ {id:'nlt-pink-deer-flexcover-300',name:'NLT Pink Deer Flexcover',price:300,previousPrice:359,audience:['Boys & Girls'],translation:'NLT',coverColour:'Pink',format:'Flexcover',ageGuidance:'Older girls, 7–12',media:cover('NLT Pink Deer Flexcover cover placeholder')},
+ {id:'kjv-kids-pink-hearts-600',name:'KJV Kids Bible Pink Hearts',price:600,previousPrice:649,audience:['Boys & Girls'],translation:'KJV',coverColour:'Pink',format:'Kids Bible',ageGuidance:'Girls',media:cover('KJV Kids Bible Pink Hearts cover placeholder')},
+ {id:'kjv-his-hers-1100',name:'KJV Bibles His and Hers',price:1100,previousPrice:1200,audience:['Adults'],translation:'KJV',format:'Couples’ set',ageGuidance:'Couples',media:cover('KJV Bibles His and Hers cover placeholder')},
+ {id:'maxwell-leadership-1800',name:'NKJV Maxwell Leadership Bible, 3rd Edition',price:1800,audience:['Adults'],translation:'NKJV',coverColour:'As supplied',format:'Study / leadership Bible',author:'John C. Maxwell',publisher:'Thomas Nelson',sku:'9780785218623',language:'English',pageCount:1664,dimensions:'234 × 157 × 25 mm',preferredBag:'Medium',typeSize:'NKJV Comfort Print, 10-point type',features:['Over 120 “Profiles in Leadership” lessons','Articles and notes on mentoring and influence','Reference index to the 21 Laws of Leadership and 21 Qualities of a Leader'],description:'A leadership-focused Bible exploring biblical principles of influence, mentoring, and personal growth, with insights from John C. Maxwell.',media:cover('NKJV Maxwell Leadership Bible cover placeholder')},
+ {id:'esv-compact-250',name:'ESV Compact Bible',price:250,audience:['Adults','Young Adults'],translation:'ESV',coverColour:'Pink',format:'Compact',media:cover('ESV Compact Bible cover placeholder')},
+ {id:'kjv-giant-black-550',name:'KJV Giant Print Bible — Black',price:550,audience:['Adults'],translation:'KJV',coverColour:'Black',format:'Giant print',media:cover('KJV Giant Print Bible black cover placeholder')},
+ {id:'kjv-giant-pink-550',name:'KJV Giant Print Bible — Pink',price:550,audience:['Adults'],translation:'KJV',coverColour:'Pink',format:'Giant print',media:cover('KJV Giant Print Bible pink cover placeholder')},
+ {id:'kjv-giant-brown-550',name:'KJV Giant Print Bible — Brown',price:550,audience:['Adults'],translation:'KJV',coverColour:'Brown',format:'Giant print',media:cover('KJV Giant Print Bible brown cover placeholder')},
+ {id:'amplified-study-1500',name:'Amplified Study Bible',price:1500,previousPrice:1700,audience:['Adults'],translation:'Amplified',format:'Study Bible',media:cover('Amplified Study Bible cover placeholder')},
+ {id:'kjv-amplified-1000',name:'KJV Amplified Bible',price:1000,previousPrice:1200,audience:['Adults'],translation:'Amplified',coverColour:'Burgundy',details:'Supplied title and translation pairing should be verified before publishing.',media:cover('KJV Amplified Bible cover placeholder')},
+ {id:'esv-creative-girls-450',name:'ESV Creative Bible for Girls',price:450,audience:['Boys & Girls','Young Adults'],translation:'ESV',ageGuidance:'Girls',format:'Creative Bible',media:cover('ESV Creative Bible for Girls cover placeholder')},
+ {id:'kjv-my-promise-550',name:'KJV My Promise Bible',price:550,audience:['Young Adults'],translation:'KJV',ageGuidance:'Young ladies',media:cover('KJV My Promise Bible cover placeholder')},
+ {id:'nkjv-thomas-nelson-study-900',name:'NKJV Thomas Nelson Study Bible',price:900,audience:['Adults'],translation:'NKJV',coverColour:'Brown',details:'Red letter edition.',format:'Study Bible',media:cover('NKJV Thomas Nelson Study Bible cover placeholder')},
+ {id:'nlt-inspire-650',name:'NLT Inspire Bible',price:650,audience:['Young Adults'],translation:'NLT',ageGuidance:'Young ladies',details:'Separate catalogue entry from the NLT Inspire Bible listed at ZAR 699.',media:cover('NLT Inspire Bible cover placeholder')},
+ {id:'purple-creative-girls-450',name:'Purple Creative Bible for Girls',price:450,previousPrice:500,audience:['Boys & Girls','Young Adults'],coverColour:'Purple',format:'Hardcover',ageGuidance:'Girls',media:cover('Purple Creative Bible for Girls cover placeholder')},
+ {id:'kjv-kids-brown-lion-600',name:'KJV Kids Bible Brown Lion',price:600,audience:['Boys & Girls'],translation:'KJV',coverColour:'Brown',ageGuidance:'Boys',media:cover('KJV Kids Bible Brown Lion cover placeholder')},
+ {id:'kjv-pink-faux-large-500',name:'KJV Pink Faux Leather Large Print Bible',price:500,audience:['Adults'],translation:'KJV',coverColour:'Pink',format:'Faux leather, large print',ageGuidance:'Ladies',media:cover('KJV Pink Faux Leather Large Print Bible cover placeholder')},
+ {id:'kjv-grey-lion-260',name:'KJV Grey Lion Faux Leather Compact Bible',price:260,audience:['Boys & Girls'],translation:'KJV',coverColour:'Grey',format:'Faux leather, compact',availableOnOrder:true,media:cover('KJV Grey Lion Faux Leather Compact Bible cover placeholder')},
+ {id:'nlt-pink-deer-hardcover-259',name:'NLT Pink Deer Hardcover Bible',price:259,audience:['Boys & Girls'],translation:'NLT',coverColour:'Pink',format:'Hardcover',ageGuidance:'Girls',media:cover('NLT Pink Deer Hardcover Bible cover placeholder')},
+ {id:'nlt-blue-elephant-flex-359',name:'NLT Blue Elephant Flexcover',price:359,audience:['Boys & Girls'],translation:'NLT',coverColour:'Blue',format:'Flexcover',ageGuidance:'Older boys, 7–12',media:cover('NLT Blue Elephant Flexcover cover placeholder')},
+ {id:'god-loves-me-199',name:'God Loves Me Bible',price:199,audience:['Toddlers'],ageGuidance:'0–4',media:cover('God Loves Me Bible cover placeholder')},
+ {id:'nkjv-study-kids-999',name:'NKJV Study Bible for Kids',price:999,audience:['Boys & Girls'],translation:'NKJV',ageGuidance:'6–15',format:'Study Bible',media:cover('NKJV Study Bible for Kids cover placeholder')},
+ {id:'nkjv-study-hardcover-499',name:'NKJV Study Bible Hardcover',price:499,audience:['Boys & Girls'],translation:'NKJV',format:'Hardcover',ageGuidance:'6–15',media:cover('NKJV Study Bible Hardcover cover placeholder')},
+ {id:'creative-bible-499',name:'Creative Bible',price:499,audience:['Boys & Girls','Young Adults'],ageGuidance:'Girls, 6–15',format:'Creative Bible',media:cover('Creative Bible cover placeholder')},
+ {id:'niv-kids-economy-150',name:'NIV Kids Economy Bible',price:150,audience:['Boys & Girls'],translation:'NIV',ageGuidance:'Girls and boys, 6–15',format:'Economy Bible',media:cover('NIV Kids Economy Bible cover placeholder')},
+ {id:'kjv-kids-teal-mountains-449',name:'KJV Kids Bible Teal Mountains Hardcover',price:449,audience:['Boys & Girls'],translation:'KJV',coverColour:'Teal',format:'Hardcover',ageGuidance:'Boys and girls, 6–15',media:cover('KJV Kids Bible Teal Mountains Hardcover cover placeholder')}
+]
